@@ -14,7 +14,7 @@ public class CsvReader {
 
 	public CsvReader() {
 		filepath = "H:\\マイドライブ\\SQL\\言葉テーブルall.txt";
-		filepath2 = "";
+		filepath2 = "H:\\マイドライブ\\SQL\\カクテルレシピtext.csv";
 		db = new DbOperation();
 	}
 

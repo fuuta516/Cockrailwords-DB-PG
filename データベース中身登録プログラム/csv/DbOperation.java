@@ -3,9 +3,7 @@ package csv;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 
 public class DbOperation {
@@ -53,27 +51,27 @@ public class DbOperation {
 		}
 	}
 	
-	public ArrayList<InfoData> dbWordsInfo(){
-		ArrayList<InfoData> a = new ArrayList<InfoData>();
-
-		String sql = "select 言葉カテゴリ,カクテル名,言葉 from カクテル言葉";
-
-		try(Connection con=DriverManager.getConnection(url, user, password );
-				PreparedStatement pstmt = con.prepareStatement(sql); )
-		{
-				ResultSet result = pstmt.executeQuery ();
-
-			while ( result.next() ) {
-				String col1 = result.getString (1) ; //費目
-				String col2 = result.getString (2) ; //メモ
-				String col3 = result.getString (3) ;
-
-				a.add(new InfoData(col1,col2,col3));
-			}
-		} catch (SQLException e) {
-
-			e.printStackTrace();
-		}
-		return a;
-	}
+//	public ArrayList<InfoData> dbWordsInfo(){
+//		ArrayList<InfoData> a = new ArrayList<InfoData>();
+//
+//		String sql = "select 言葉カテゴリ,カクテル名,言葉 from カクテル言葉";
+//
+//		try(Connection con=DriverManager.getConnection(url, user, password );
+//				PreparedStatement pstmt = con.prepareStatement(sql); )
+//		{
+//				ResultSet result = pstmt.executeQuery ();
+//
+//			while ( result.next() ) {
+//				String col1 = result.getString (1) ; //費目
+//				String col2 = result.getString (2) ; //メモ
+//				String col3 = result.getString (3) ;
+//
+//				a.add(new InfoData(col1,col2,col3));
+//			}
+//		} catch (SQLException e) {
+//
+//			e.printStackTrace();
+//		}
+//		return a;
+//	}
 }
