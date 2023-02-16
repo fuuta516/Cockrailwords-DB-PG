@@ -51,6 +51,24 @@ public class DbOperation {
 		}
 	}
 	
+	public void dbYougoIn(String yougo, String mean) {//レシピ
+
+		String sql = "insert into カクテル製法用語(用語,説明) values (?,?)";
+
+		try(Connection con=DriverManager.getConnection(url, user, password );
+				PreparedStatement pstmt = con.prepareStatement(sql); ) {
+
+			pstmt.setString(1,yougo);
+			pstmt.setString(2,mean);
+
+			pstmt.execute();
+
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}
+	}
+	
 //	public ArrayList<InfoData> dbWordsInfo(){
 //		ArrayList<InfoData> a = new ArrayList<InfoData>();
 //
