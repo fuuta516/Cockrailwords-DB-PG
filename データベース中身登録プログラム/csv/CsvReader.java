@@ -55,7 +55,7 @@ public class CsvReader {
 					String[] str = line.split(",");
 					//クラス配列に入れる等その他の処理に繋げていく
 
-					db.dbRecipeIn(str[0],str[1],str[2],str[3],str[4],str[5]);
+					db.dbRecipeIn(str[0],str[1],str[2],str[3],str[4]);
 				}
 				br.close();
 			}

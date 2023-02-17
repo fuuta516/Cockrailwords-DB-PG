@@ -29,9 +29,9 @@ public class DbOperation {
 			e.printStackTrace();
 		}
 	}
-	public void dbRecipeIn(String wordscate,String coctail,String words,String imageURL,String howto,String material) {//レシピ
+	public void dbRecipeIn(String wordscate,String coctail,String words,String howto,String material) {//レシピ
 
-		String sql = "insert into カクテルレシピ(言葉カテゴリ,カクテル名,言葉,URL,作り方,材料) values (?,?,?,?,?,?)";
+		String sql = "insert into カクテルレシピ(言葉カテゴリ,カクテル名,言葉,作り方,材料) values (?,?,?,?,?)";
 
 		try(Connection con=DriverManager.getConnection(url, user, password );
 				PreparedStatement pstmt = con.prepareStatement(sql); ) {
@@ -39,9 +39,8 @@ public class DbOperation {
 			pstmt.setString(1,wordscate);
 			pstmt.setString(2,coctail);
 			pstmt.setString(3,words);
-			pstmt.setString(4,imageURL);
-			pstmt.setString(5,howto);
-			pstmt.setString(6,material);
+			pstmt.setString(4,howto);
+			pstmt.setString(5,material);
 
 			pstmt.execute();
 
